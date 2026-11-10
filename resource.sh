@@ -15,6 +15,7 @@ apt-get install -y \
   wget \
   gnupg \
   unzip \
+  git\
   jq \
   fontconfig \
   openjdk-21-jre-headless
