@@ -91,9 +91,9 @@ resource "aws_security_group" "zomato_sg" {
 
 # Zomato DevSecOps EC2 Instance
 resource "aws_instance" "zomato_devsecops" {
-  ami                         = ami-021aaf3749be66813
-  instance_type               = t3.micro
-  key_name                    = zomato-key
+  ami                         = data.aws_ami.ubuntu.id
+  instance_type               = var.instance_type
+  key_name                    = var.key_name
   subnet_id                   = data.aws_subnets.default.ids[0]
   vpc_security_group_ids      = [aws_security_group.zomato_sg.id]
   associate_public_ip_address = true
